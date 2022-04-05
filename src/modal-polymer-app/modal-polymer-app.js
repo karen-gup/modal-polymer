@@ -16,9 +16,20 @@ class ModalPolymerApp extends PolymerElement {
       <h2>Hello!</h2>
       <p>Este es un modal</p>
       <p>[[prop1]]</p>
-      <button on-click="doClick">click</button>
+      <button on-click="doClick">Abrir modal</button>
+      <button on-click="toClick">Abrir modal 2</button>
       <p>Contador: [[contador]]</p>
-      <modal-box id="modal"></modal-box>
+
+      <modal-box id="modal">
+      <h2>Modal Box con SLOT</h2>
+          <p>Este es el contenido del modal...!</p>
+          <p>Podemos poner otras lineas de contenido</p>
+      </modal-box>
+      <modal-box id="modal2">
+      <h2>Modal 2 Box con SLOT</h2>
+          <p>Este es el contenido del modal 2...!</p>
+          <p>Podemos poner otras lineas de contenido</p>
+      </modal-box>
     `;
   }
   static get properties() {
@@ -37,6 +48,9 @@ class ModalPolymerApp extends PolymerElement {
     this.prop1 = 'Ya se hizo click'
     this.contador++
     this.$.modal.open()
+  }
+  toClick(){
+    this.$.modal2.open()
   }
 }
 

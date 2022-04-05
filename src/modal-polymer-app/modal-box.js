@@ -72,9 +72,7 @@ export class ModalBox extends PolymerElement {
       <section on-click="close" class$="[[modalClass]]">
         <span  class="material-icons"> close </span>
         <article>
-          <h2>Modal Box</h2>
-          <p>Este es el contenido de mi vida...!</p>
-          <p>Podemos poner otras lineas de contenido</p>
+          <slot></slot>
         </article>
       </section>
     
